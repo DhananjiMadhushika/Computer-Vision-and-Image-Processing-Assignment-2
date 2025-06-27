@@ -49,7 +49,7 @@ if __name__ == "__main__":
     width, height = 300, 300
 
     # Save path
-    output_dir = r"../result"
+    output_dir = r"../result/Q1"
     os.makedirs(output_dir, exist_ok=True)
 
     # Create and process images

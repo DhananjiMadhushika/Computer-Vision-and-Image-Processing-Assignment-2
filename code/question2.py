@@ -24,27 +24,21 @@ def perform_region_growing_segmentation(input_image, initial_seeds, similarity_t
   
     # Initialize segmentation mask
     segmentation_mask = np.zeros_like(input_image, dtype=np.uint8)
-    
     # Initialize processing queue with seed points
     processing_queue = []
     for seed_coord in initial_seeds:
         processing_queue.append(seed_coord)
-    
     iteration_counter = 0
     
     # Main region growing loop
     while processing_queue:
         iteration_counter += 1
-        
         # Get next pixel to process
         current_pixel = processing_queue.pop(0)
-        
         # Extract pixel intensity at current location
         current_intensity = input_image[current_pixel[1], current_pixel[0]]
-        
         # Mark current pixel as part of segmented region
         segmentation_mask[current_pixel[1], current_pixel[0]] = 255
-        
         # Update display every 20 iterations for better performance
         if iteration_counter % 20 == 0:
             display_segmentation(segmentation_mask)
