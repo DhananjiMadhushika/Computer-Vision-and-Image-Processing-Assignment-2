@@ -1,3 +1,9 @@
+#----------------------------------------------------------
+# 1. . Consider an image with 2 objects and a total of 3-pixel values (1 for each object and 
+#      one for the background). Add Gaussian noise to the image. Implement and test Otsu’s 
+#      algorithm with this image.
+#----------------------------------------------------------
+
 import numpy as np
 import cv2
 import os
@@ -29,8 +35,6 @@ def create_image(width, height):
     cv2.fillPoly(img, [pts], 0)
 
     return img
-
-
 
 
 # ------------------- Step 2: Add Gaussian noise -------------------
